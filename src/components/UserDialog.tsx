@@ -34,6 +34,7 @@ const UserDialog: React.FC<Props> = ({ open, onClose, onSave, user }) => {
     const onSubmit: SubmitHandler<User> = (data) => {
         onSave(user ? { ...user, ...data } : { ...data, id: Date.now() });
         onClose();
+        reset({ id: 0, name: "", email: "" });
     };
 
     return (
